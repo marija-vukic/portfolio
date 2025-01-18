@@ -1,7 +1,36 @@
+/* Body Style  */
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
     max-width: 100ch;
+    margin-inline: max(1em, (100% - 100ch) / 2);
   }
+
+/* Nav Bar Style  */
+nav{
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 20px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+
+nav a {
+  text-decoration: none; 
+  color: inherit; 
+  padding: 0.5em; 
+}
+
+nav a.current {
+  border-bottom: 4px solid oklch(80% 3% 200); 
+  padding-bottom: 0.1em; 
+  background-color: oklch(95% 3% 200);
+  border-radius: 4px; 
+}
