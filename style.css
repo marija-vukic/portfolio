@@ -3,8 +3,21 @@
   --color-accent: oklch(65% 50% 0);
 }
 
+.color-scheme {
+  position: absolute;
+  top: 1rem; 
+  right: 1rem; 
+  font-size: 80%; 
+  font-family: inherit;
+}
+
+input, textarea, select, button {
+  font: inherit;
+}
+
 html {
   accent-color: var(--color-accent);
+  color-scheme: light dark;
 }
 
 /* Body Style  */
@@ -25,7 +38,8 @@ nav{
   text-align: center;
   padding-inline-start: 0.5em;
   margin-bottom: 20px;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  /* border-bottom: 1px solid oklch(80% 3% 200); */
+  border-bottom-color: oklch(50% 10% 200 / 40%);
 }
 
 nav a {
@@ -37,13 +51,15 @@ nav a {
 
 nav a:hover {
   border-bottom: 4px solid var(--color-accent); 
-  background-color: oklch(from var(--color-accent) 95% 5% h); 
+  /* background-color: oklch(from var(--color-accent) 95% 5% h);  */
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   padding-bottom: 0.1em;
   border-radius: 4px;
 }
 
 nav a.current {
-  border-bottom: 4px solid oklch(80% 3% 200); 
+  /* border-bottom: 4px solid oklch(80% 3% 200);  */
+  border-bottom: 4px solid oklch(50% 10% 200 / 40%);
   padding-bottom: 0.4em; 
 }
 
