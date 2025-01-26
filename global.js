@@ -52,15 +52,15 @@ document.body.insertAdjacentHTML(
 );
 
 const select = document.querySelector('.color-scheme select');
-select.addEventListener('input', function (event) {
-  console.log('Color scheme changed to', event.target.value);
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
-});
+const savedColorScheme = localStorage.getItem('colorScheme') || 'light dark';
+document.documentElement.style.setProperty('color-scheme', savedColorScheme);
+select.value = savedColorScheme;
 
 select.addEventListener('input', function (event) {
-  console.log('Color scheme changed to', event.target.value);
-  document.documentElement.style.setProperty('color-scheme', event.target.value);
-  localStorage.colorScheme = event.target.value;
+  const selectedScheme = event.target.value;
+  console.log('Color scheme changed to', selectedScheme);
+  document.documentElement.style.setProperty('color-scheme', selectedScheme);
+  localStorage.setItem('colorScheme', selectedScheme);
 });
 
 let form = document.querySelector('form');
