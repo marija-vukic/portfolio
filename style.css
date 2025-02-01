@@ -107,25 +107,50 @@ button:hover {
 /* Projects Style */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  gap: 3em;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
   gap: 1em;
 }
 
-article {
+div {
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 3;
 }
 
-article h2 {
-  margin: 0;
+div h2,
+.projects h2 {
+  margin: 8;
+  font-weight: bold;
+  text-align: center;
+  grid-column: span 2;
+  line-height: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 400%;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+div img,
+div p {
   grid-column: span 2;
 }
 
-article img,
-article p {
-  grid-column: span 2;
-}
 
 /* Heading Styles */
 h1 {
@@ -208,4 +233,35 @@ h2, h3, h4, h5, h6 {
 .resume-section h3 + p {
   display: inline;
   margin-left: 0.25em; 
+}
+
+/* GitHub Stats Styling */
+#profile-stats {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1rem;
+  text-align: center;
+}
+
+#profile-stats dl {
+  display: contents; /* Allow dt and dd to share grid space */
+}
+
+#profile-stats dt {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: rgb(182, 182, 182);
+  grid-row: 1; /* Place all <dt> elements on the first row */
+}
+
+#profile-stats dd {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  grid-row: 2; /* Place all <dd> elements on the second row */
+  color: inherit;
 }

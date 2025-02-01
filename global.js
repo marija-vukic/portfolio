@@ -79,3 +79,100 @@ form?.addEventListener('submit', function (event) {
   console.log('Generated URL:', url);
   location.href = url;
 });
+
+//lab 4
+// //1.2
+// export async function fetchJSON(url) {
+//   try {
+//       const response = await fetch(url);
+//       if (!response.ok) {
+//           throw new Error(`Failed to fetch projects: ${response.statusText}`);
+//       }
+//       const data = await response.json();
+//       return data;
+//   } catch (error) {
+//       console.error('Error fetching or parsing JSON data:', error);
+//   }
+// }
+
+// window.fetchJSON = fetchJSON;
+
+// //1.3
+
+// export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+//   if (!containerElement || !(containerElement instanceof HTMLElement)) {
+//       console.error('Invalid container element provided.');
+//       return;
+//   }
+//   containerElement.innerHTML = ''; // Clear existing content
+
+//   const validHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+//   if (!validHeadings.includes(headingLevel)) {
+//       console.warn(`Invalid heading level "${headingLevel}", defaulting to h2.`);
+//       headingLevel = 'h2';
+//   }
+
+//   projects.forEach(project => {
+//       const div = document.createElement('div');
+//       div.classList.add('project-item'); // Add the project-item class
+
+//       const title = project.title || 'Untitled Project';
+//       const image = project.image || 'https://via.placeholder.com/150';
+//       const description = project.description || 'No description available.';
+
+//       div.innerHTML = `
+//           <${headingLevel}>${title}</${headingLevel}>
+//           <img src="${image}" alt="${title}">
+//           <p>${description}</p>
+//       `;
+
+//       containerElement.appendChild(div);
+//   });
+// }
+
+export async function fetchJSON(url) {
+  try {
+      // Fetch the JSON file from the given URL
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    // console.log(response)
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+      console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!containerElement || !(containerElement instanceof HTMLElement)) {
+    console.error('Invalid container element provided.');
+    return;
+  }
+
+  const validHeadings = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+  if (!validHeadings.includes(headingLevel)) {
+      console.warn(`Invalid heading level "${headingLevel}". Defaulting to 'h2'.`);
+      headingLevel = 'h2';  
+  }
+
+  containerElement.innerHTML = '';
+
+  for (let project of projects) {
+    const article = document.createElement('article');
+    article.innerHTML = `
+      <${headingLevel}>${project.title}</${headingLevel}>
+      <img src="${project.image}" alt="${project.title}">
+      <p>${project.description}</p>
+    `;
+    containerElement.appendChild(article);
+  }
+}
+
+//3
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}
+

@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Power Outage Analysis",
+        "year": "2024",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Performed EDA and created a Gradient Boosting Regressor to forecast U.S. power outage durations, achieving a cross-validated RMSE of 1956.58 and an R² of 0.577."
+    },
+    {
+        "title": "S&P 500 Stock Recommendation System",
+        "year": "2023",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Built an S&P 500 Stock Recommendation System using NLP and historical data analysis to provide insightful investment guidance."
+    },
+    {
+        "title": "Biokind Analytics x MOW Customized Acknowledgement Letter Generator",
+        "year": "2024",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Prompt engineered a Python-based NLP machine learning model with LangChain and SerpApi to generate personalized acknowledgment letters for Meals on Wheels San Diego donors, incorporating donor-specific and seasonal context for enhanced engagement."
+    },
+    {
+        "title": "Dinosaur Image Classifier",
+        "year": "2024",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Developed a dinosaur classification model that identifies the type of dinosaur from a single image, using data collected on ten of the 20 most popular dinosaurs."
+    },
+    {
+        "title": "Diabete's Prediction",
+        "year": "2024",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Developed a model to classify diabetes using multiple algorithms, including decision trees, random forest, and SVMs, based on 2015 US health data."
+    },
+    {
+        "title": "Data-Driven Analysis of Financial Behaviors on U.S. Credit Scores",
+        "year": "2024",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Analyzed the impact of financial behaviors on US credit scores using a decision tree model, revealing that timely payments, lower debt-to-income ratios, and regular investments significantly improve credit scores, with a model accuracy of approximately 75%."
+    },
+    {
+        "title": "Price Movement Simulation",
+        "year": "2023",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Developed a model to analyze the price movement of a derivative asset, utilized linear regression to determine the relative importance of each underlying asset on the resulting price, and validated the ranking of these influences."
+    },
+    {
+        "title": "US Data Center Mapping and Company Analysis",
+        "year": "2024",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Mapped data centers across the US, identifying their locations and the companies operating them, along with the semiconductors and chips they utilize."
+    },
+    {
+        "title": "SFIC Portfolio Platform",
+        "year": "2024",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Created SFIC portfolio platform to allow Asset Management Analysts track portfolio position performance in real time"
+    },
+    {
+        "title": "KNN Image Classifier",
+        "year": "2023",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Built a KNN algorithm to classify images based on their visual features."
+    },
+    {
+        "title": "Project Ginosko",
+        "year": "2021",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Web development project from Kode With Klossy. Created a hub of educational resources for high school students across the US interested in exploring topics from higher education to human rights activism."
+    },
+    {
+        "title": "Net Income Calculator",
+        "year": "2023",
+        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
+        "description": "Developed a tool to calculate net income by factoring in all sources of revenue and expenses, helping individuals and businesses accurately determine their financial standing."
+    }
+]
