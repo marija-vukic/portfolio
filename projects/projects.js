@@ -129,10 +129,16 @@ function renderPieChart(projectsGiven) {
                     .attr("class", (_, i) => (i === selectedIndex ? "selected" : ""));
 
                 // Filter projects
-                let filteredProjects = selectedIndex === -1 
-                    ? projectsGiven 
-                    : projectsGiven.filter(p => p.year === selectedYear);
+                // let filteredProjects = selectedIndex === -1 
+                //     ? projectsGiven 
+                //     : projectsGiven.filter(p => p.year === selectedYear);
 
+                let filteredProjects = projectsGiven.filter(p => {
+                    let matchesYear = (selectedIndex === -1) || (p.year === selectedYear);
+                    let matchesQuery = (query === '') || Object.values(p).join("\n").toLowerCase().includes(query.toLowerCase());
+                    return matchesYear && matchesQuery;
+                });
+                
                 renderProjects(filteredProjects, document.querySelector('.projects'), 'h2');
             });
     });
@@ -143,17 +149,30 @@ renderPieChart(projects);
 let query = '';
 let searchInput = document.querySelector('.searchBar');
 
+// searchInput.addEventListener("input", (event) => {
+//     query = event.target.value;
+//     let filteredProjects = projects.filter((project) => {
+//         let values = Object.values(project).join("\n").toLowerCase();
+//         return values.includes(query.toLowerCase());
+//     });
+
+//     const projectsContainer = document.querySelector(".projects");
+//     renderProjects(filteredProjects, projectsContainer, "h2");
+    
+//     // Reset selectedIndex when using search
+//     // selectedIndex = -1;
+//     renderPieChart(filteredProjects);
+// });
+
 searchInput.addEventListener("input", (event) => {
     query = event.target.value;
-    let filteredProjects = projects.filter((project) => {
-        let values = Object.values(project).join("\n").toLowerCase();
-        return values.includes(query.toLowerCase());
+    let filteredProjects = projects.filter(p => {
+        let matchesYear = (selectedIndex === -1) || (p.year === selectedYear);
+        let matchesQuery = (query === '') || Object.values(p).join("\n").toLowerCase().includes(query.toLowerCase());
+        return matchesYear && matchesQuery;
     });
 
     const projectsContainer = document.querySelector(".projects");
     renderProjects(filteredProjects, projectsContainer, "h2");
-    
-    // Reset selectedIndex when using search
-    selectedIndex = -1;
     renderPieChart(filteredProjects);
 });
