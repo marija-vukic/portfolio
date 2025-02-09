@@ -109,6 +109,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
   gap: 3em;
+  align-items: stretch;
 }
 
 .projects article {
@@ -116,6 +117,25 @@ button:hover {
   grid-template-rows: subgrid;
   grid-row: span 3;
   gap: 1em;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.project-details{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.project-year {
+  font-family: Baskerville, serif;
+  font-variant-numeric: oldstyle-nums;
+  color: gray;
+  font-style: italic;
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 div {
@@ -151,6 +171,99 @@ div p {
   grid-column: span 2;
 }
 
+/* svg projects */
+#projects-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+.legend {
+  display: flex; 
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  width: fit-content;
+  background-color: white;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  white-space: nowrap; 
+}
+
+.legend .swatch {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color);
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center; 
+  gap: 2rem;
+}
+
+/* svg style */
+path {
+  transition: 300ms;
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+}
+
+path {
+  cursor: pointer;
+}
+
+/* Highlight selected wedge */
+.selected {
+  --color: oklch(60% 45% 0) !important; /* Different highlight color */
+}
+
+.selected:is(path) {
+  fill: var(--color);
+}
+
+/* Highlight selected legend item */
+.legend .selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+&:is(path) {
+  fill: var(--color);
+}
+
+.selected:is(li) {
+  font-weight: bold;
+}
+
+path {
+  cursor: pointer;
+}
 
 /* Heading Styles */
 h1 {

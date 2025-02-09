@@ -158,6 +158,18 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       headingLevel = 'h2';  
   }
 
+  // containerElement.innerHTML = '';
+
+  // for (let project of projects) {
+  //   const article = document.createElement('article');
+  //   article.innerHTML = `
+  //     <${headingLevel}>${project.title}</${headingLevel}>
+  //     <img src="${project.image}" alt="${project.title}">
+  //     <p>${project.description}</p>
+  //   `;
+  //   containerElement.appendChild(article);
+  // }
+
   containerElement.innerHTML = '';
 
   for (let project of projects) {
@@ -165,7 +177,11 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     article.innerHTML = `
       <${headingLevel}>${project.title}</${headingLevel}>
       <img src="${project.image}" alt="${project.title}">
+     
+      <div class="project-details">
       <p>${project.description}</p>
+      <p class="project-year">c. ${project.year}</p>
+      </div>
     `;
     containerElement.appendChild(article);
   }
