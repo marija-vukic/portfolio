@@ -7,7 +7,7 @@ import { fetchJSON, renderProjects } from '../global.js';
     projectsTitle.textContent = `${projects.length} Projects`;
     renderProjects(projects, projectsContainer, 'h2');
 })();
-
+c
 let selectedIndex = -1;
 
 // lab 5
