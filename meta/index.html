@@ -8,12 +8,8 @@
 </head>
 <body>
     <h1>Meta</h1>
-    <p>A description.</p>
-
-    <hr>
 
     <!-- step 1 -->
-
     <h2>Summary</h2>
     <div id="stats"></div>
     
@@ -40,9 +36,12 @@
     </dl>
       
     <!-- step 5 -->
-    <p id="selection-count">No commits selected</p>
-    <dl id="language-breakdown" class="stats"></dl>
-
+    <div class="language-stats">
+        <p id="selection-count">No commits selected</p>
+        <div class="language-breakdown-container">
+            <dl id="language-breakdown" class="stats"></dl>
+        </div>
+    </div>
 
     <!-- scripts -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
