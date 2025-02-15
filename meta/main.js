@@ -151,15 +151,12 @@ function createScatterplot() {
 
 //2.2
 function createAxes(xScale, yScale) {
-    const uniqueDates = [...new Set(commits.map(d => d3.timeFormat("%Y-%m-%d")(d.datetime)))]
-        .map(d => new Date(d))
-        .sort((a, b) => a - b);
-
-    const spacedTicks = uniqueDates.filter((d, i) => i % 2 === 0);
+    const uniqueCommitDates = [...new Set(commits.map(d => d3.timeDay(d.datetime)))];
 
     const xAxis = d3.axisBottom(xScale)
-        .tickValues(spacedTicks)
-        .tickFormat(d3.timeFormat("%b %d"));
+        .tickValues(uniqueCommitDates) 
+        .tickFormat(d3.timeFormat("%b %d")); 
+
 
     const yAxis = d3.axisLeft(yScale)
         .tickValues(d3.range(0, 25, 2))
