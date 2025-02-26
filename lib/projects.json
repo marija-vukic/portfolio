@@ -51,7 +51,8 @@
         "title": "Boston Biker Activity",
         "year": "2025",
         "image": "../images/biker activity.png",
-        "description": "Developed an interactive time-filtered geospatial visualization of bike-sharing activity using Mapbox and D3.js to analyze departure and arrival imbalances across Boston."
+        "description": "Developed an interactive time-filtered geospatial visualization of bike-sharing activity using Mapbox and D3.js to analyze departure and arrival imbalances across Boston.",
+        "link" : "https://marija-vukic.github.io/bikeractivity-boston/"
     },
     {
         "title": "KNN Image Classifier",
