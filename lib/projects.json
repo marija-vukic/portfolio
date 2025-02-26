@@ -48,10 +48,10 @@
         "description": "Mapped data centers across the US, identifying their locations and the companies operating them, along with the semiconductors and chips they utilize."
     },
     {
-        "title": "SFIC Portfolio Platform",
-        "year": "2024",
-        "image": "https://dsc106.com/labs/lab02/images/empty.svg",
-        "description": "Created SFIC portfolio platform to allow Asset Management Analysts track portfolio position performance in real time"
+        "title": "Boston Biker Activity",
+        "year": "2025",
+        "image": "../images/biker activity.png",
+        "description": "Developed an interactive time-filtered geospatial visualization of bike-sharing activity using Mapbox and D3.js to analyze departure and arrival imbalances across Boston."
     },
     {
         "title": "KNN Image Classifier",

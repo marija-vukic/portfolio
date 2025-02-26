@@ -112,6 +112,13 @@ button:hover {
   align-items: stretch;
 }
 
+.projects img {
+  width: 100%;
+  height: 12em; /* Match the minmax size in grid-template-columns */
+  object-fit: cover; /* Ensures images maintain aspect ratio */
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+
 .projects article {
   display: grid;
   grid-template-rows: subgrid;
